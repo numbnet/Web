@@ -1,0 +1,122 @@
+<script type='text/javascript' src='js/jquery.js'></script>
+<script type='text/javascript' src='js/jquery-migrate.min.js'></script>
+
+      <style type="text/css">
+img.wp-smiley,
+img.emoji {
+   display: inline !important;
+   border: none !important;
+   box-shadow: none !important;
+   height: 1em !important;
+   width: 1em !important;
+   margin: 0 .07em !important;
+   vertical-align: -0.1em !important;
+   background: none !important;
+   padding: 0 !important;
+}
+</style>
+<link rel='stylesheet' id='twentytwelve-style-css'  href='css/style.css?ver=4.9.16' type='text/css' media='all' />
+<!--link rel='stylesheet' id='fontello-css'  href='css/search.css?ver=4.9.16' type='text/css' media='all' / -->
+<link rel='stylesheet' id='owl-carousel-css'  href='css/owl.carousel.css' type='text/css' media='all' />
+
+<div id="page" class="hfeed site">
+      <div id="main" class="wrapper">
+   <div class="landing-page">
+
+      <section class="bg-light-green">
+         <div class="landing-page-content">
+            <div class="left bg-gray">
+
+          <form action="javascript:void(0)" method="post" id="calc-form">
+            <h3 style="text-align:center;color:red">Кредитный калькулятор</h3>
+               </hr></br>
+
+<p><label for="currency">Валюта :</label><select name="currency" id="currency"><option value="USD">USD</option><option value="UAH">UAH</option></select></p>
+               <p><label for="schedule">График:</label>
+               <select name="schedule" id="schedule">
+                  <option value="1">Процент</option>
+                  <option value="2">На остаток</option>
+                  <option value="3">Равными частями</option>
+               </select></p>
+               <p><label for="sum">Сумма:</label>
+               <input type="text" name="sum" id="sum" value="16000"></p>
+               <p><label for="month">Срок:</label>
+
+               <select name="month" id="month">
+                  <option value="10">10 мес.</option>
+            <option value="2">2 мес.</option>
+                  <option value="3">3 мес.</option>
+                  <option value="4">4 мес.</option>
+                  <option value="5">5 мес.</option>
+                  <option value="6">6 мес</option>
+                  <option value="12">1 год</option>
+                  <option value="24">2 года</option>
+                  <option value="36">3 года</option>
+               </select></p>
+               <p><label for="username">Имя:</label>
+               <input type="text" id="username" name="username"></p>
+               <p><label for="type-property ">Вид :</label>
+               <select name="type-property" id="type-property">
+                  <option value="Квартира">OPTION1</option>
+                  <option value="Дом">OPTION2</option>
+                  <option value="Нежилое помещение">OPTION3</option>
+                  <option value="Земля">OPTION4</option>
+                  <option value="Другое">OPTION5</option>
+               </select></p>
+
+               <p><label for="city">Город:</label>
+               <input type="text" id="city" name="city"></p>
+               <p><label for="phone">Ваш телефон:</label>
+               <input type="text" name="phone" id="phone"></p>
+
+<div style="text-align: center;"><button id="calc-credit" class="button">Расчитать</button><input class="button" id="send-credit" type="submit" value="Послать"></div>
+</form>
+</div>
+
+<div class="right">
+               <div id="calcСonditions">
+                  <h3>ЗАЗЫВАЕМ</h3>
+               </div>
+               <div id="calcTable">
+                 <div class="calcTableHead">
+                  <table class="calcTableInfo">
+                    <thead>
+                       <tr>
+                          <th colspan="2">
+                             <h2>Расчет ежемесячного<!--2-->
+                          </h2></th>
+                       </tr>
+                       <tr>
+                          <th><strong>Месяц</strong></th>
+                          <th><strong>Платеж</strong></th>
+                       </tr>
+                    </thead>
+                    <tfoot></tfoot>
+                    <tbody></tbody>
+                   </table>
+               </div>
+               <div id="calcTableBody">
+               </div>
+            </div>
+         </div>
+      </div></section>
+   </div>
+   </div>
+  <!-- #main .wrapper -->
+   </div>
+
+<script type="text/javascript" src="js/owl.carousel.min.js"></script>
+<script type="text/javascript" src="js/wp-embed.min.js"></script>
+<script type="text/javascript" src="js/landingtext.js"></script>
+<script type="text/javascript" src="js/calccredit.js"></script>
+
+<script>
+jQuery(document).ready(function(a){a("#about-us").click(function(){a("#landing-text-body").slideToggle()}),a("#menu-toggle").click(function(){a("#nav-mobile").slideToggle()}),a("#menu-close-toggle").click(function(){a("#nav-mobile").slideToggle()}),a("#phone-toggle").click(function(){a("#site-header-top").slideToggle()})}),jQuery(document).ready(function(a){var b=a(".entry-title").html();a("#no-display").val(b)});
+</script>
+
+
+<script>
+// calc
+jQuery(document).ready(function(a){a("#calc-credit").click(function(){var d=(a("#currency").val(),a("#schedule").val(),a("#sum").val()),e=a("#month").val(),j=(a("#type-property").val(),a("#phone").val(),a("#city").val(),0),j=0,k=.025;if(a("#ResultTable").remove(),a("#calcСonditions").slideUp("slow"),a("#calcTable").slideDown("slow"),""==d&&(a("#sum").val("10000"),d=1e4),""==e&&(a("#month").val("1"),e=1),"USD"==a("#currency option:selected").val(),"UAH"==a("#currency option:selected").val(),1==a("#schedule option:selected").val()){for(a("#calcTableBody").append('<table id="ResultTable""><tbody>'),i=0;i<e;i++)a("#calcTableBody table tbody").append("<tr><td>"+(i+1)+"</td><td>"+d*k+"</td></tr>");a("#calcTableBody table tbody").append("<tr><td><strong>Всего:</strong></td><td><strong>"+d*(1+k)*e+"</strong></td></tr>"),a("#calcTableBody").append("</tbody></table>")}if(2==a("#schedule option:selected").val()&&alert("2"),3==a("#schedule option:selected").val()){for(a("#calcTableBody").append('<table id="ResultTable"><tbody>'),j=Math.pow(1+k,e),j=d*k/(1-1/j),j=Math.round(j),i=0;i<e;i++)a("#calcTableBody table tbody").append("<tr><td>"+(i+1)+"</td><td>"+j+"</td></tr>");a("#calcTableBody table tbody").append("<tr><td><strong>Всего:</strong></td><td><strong>"+j*e+"</strong></td></tr>"),a("#calcTableBody").append("</tbody></table>")}}),jQuery("#send-credit").on("click",function(){var b=a("#username").val(),c=a("#currency").val(),d=a("#schedule").val(),e=a("#sum").val(),f=a("#month").val(),g=a("#type-property").val(),h=a("#phone").val(),i=a("#city").val();jQuery("#msg-error").remove(),""!=b&&""!=c&&""!=d&&""!=e&&""!=f&&""!=g&&""!=h&&""!=i?(temp=c+" - "+d+" - "+e+" - "+f+" - "+g+" - "+h+" - "+i,jQuery.ajax({type:"POST",url:"#",data:jQuery("#calc-form").serialize(),success:function(a){"true"==a?jQuery("#calc-form").fadeOut("fast",function(){window.location.href = '#'}):jQuery("#calc-form").fadeIn("fast",function(){jQuery(this).before("<p id='msg-error'>Ваше сообщение не отправлено :( попробуйте позже</strong></p>")})}})):jQuery("#calc-form").fadeIn("fast",function(){jQuery(this).before("<p id='msg-error'>Пожалуйста, заполните все обязательные поля</p>")})}),a("#username").val(""),a("#phone").val(""),a("#city").val("")});
+</script>
+

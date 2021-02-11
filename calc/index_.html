@@ -1,0 +1,130 @@
+
+<!-- saved from url=(0065)file:///E:/project/credithouse/credithouse.com.ua/calc/index.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><script type="text/javascript" src="./index__files/jquery.js"></script>
+<script type="text/javascript" src="./index__files/jquery-migrate.min.js"></script>
+
+      <style type="text/css">
+img.wp-smiley,
+img.emoji {
+   display: inline !important;
+   border: none !important;
+   box-shadow: none !important;
+   height: 1em !important;
+   width: 1em !important;
+   margin: 0 .07em !important;
+   vertical-align: -0.1em !important;
+   background: none !important;
+   padding: 0 !important;
+}
+</style>
+<link rel="stylesheet" id="twentytwelve-style-css" href="./index__files/style.css" type="text/css" media="all">
+<link rel="stylesheet" id="fontello-css" href="./index__files/search.css" type="text/css" media="all">
+<link rel="stylesheet" id="owl-carousel-css" href="./index__files/owl.carousel.css" type="text/css" media="all">
+</head><body><div id="page" class="hfeed site">
+      <div id="main" class="wrapper">
+   <div class="landing-page">
+
+      <section class="bg-light-green">
+         <div class="landing-page-content">
+            <div class="left bg-gray">
+
+          <form action="javascript:void(0)" method="post" id="calc-form">
+            <h3 style="text-align:center;color:red">Кредитный калькулятор</h3>
+               <br>
+
+<p><label for="currency">Валюта :</label><select name="currency" id="currency"><option value="USD">USD</option><option value="UAH">UAH</option></select></p>
+               <p><label for="schedule">График:</label>
+               <select name="schedule" id="schedule">
+                  <option value="1">Процент</option>
+                  <option value="2">На остаток</option>
+                  <option value="3">Равными частями</option>
+               </select></p>
+               <p><label for="sum">Сумма:</label>
+               <input type="text" name="sum" id="sum" value="10000"></p>
+               <p><label for="month">Срок:</label>
+
+               <select name="month" id="month">
+                  <option value="1">1 мес.</option>
+            <option value="2">2 мес.</option>
+                  <option value="3">3 мес.</option>
+                  <option value="4">4 мес.</option>
+                  <option value="5">5 мес.</option>
+                  <option value="6">6 мес</option>
+                  <option value="12">1 год</option>
+                  <option value="24">2 года</option>
+                  <option value="36">3 года</option>
+               </select></p>
+               <p><label for="username">Имя:</label>
+               <input type="text" id="username" name="username"></p>
+               <p><label for="type-property ">Вид :</label>
+               <select name="type-property" id="type-property">
+                  <option value="Квартира">OPTION1</option>
+                  <option value="Дом">OPTION2</option>
+                  <option value="Нежилое помещение">OPTION3</option>
+                  <option value="Земля">OPTION4</option>
+                  <option value="Другое">OPTION5</option>
+               </select></p>
+
+               <p><label for="city">Город:</label>
+               <input type="text" id="city" name="city"></p>
+               <p><label for="phone">Ваш телефон:</label>
+               <input type="text" name="phone" id="phone"></p>
+
+<div style="text-align: center;"><button id="calc-credit" class="button">Расчитать</button><input class="button" id="send-credit" type="submit" value="Послать"></div>
+</form>
+</div>
+
+<div class="right">
+               <div id="calcСonditions" style="display: none;">
+                  <h3>ЗАЗЫВАЕМ</h3>
+               </div>
+               <div id="calcTable" style="display: block;">
+                 <div class="calcTableHead">
+                  <table class="calcTableInfo">
+                    <thead>
+                       <tr>
+                          <th colspan="2">
+                             <h2>Расчет ежемесячного<!--2-->
+                          </h2></th>
+                       </tr>
+                       <tr>
+                          <th><strong>Месяц</strong></th>
+                          <th><strong>Платеж</strong></th>
+                       </tr>
+                    </thead>
+                    <tfoot></tfoot>
+                    <tbody></tbody>
+                   </table>
+               </div>
+               <div id="calcTableBody">
+               <table id="ResultTable" "=""><tbody><tr><td>1</td><td>250</td></tr><tr><td><strong>Всего:</strong></td><td><strong>10250</strong></td></tr></tbody></table></div>
+            </div>
+         </div>
+      </div></section>
+   </div>
+   </div>
+  <!-- #main .wrapper -->
+   </div>
+<!-- #page -->
+<a href="file:///E:/project/credithouse/credithouse.com.ua/calc/index.html#call-back"><div id="fixed-call">
+   <i class="icon-volume-control-phone"></i>
+</div></a>
+<div id="call-back" class="modal-dialog">
+<div><a href="file:///E:/project/credithouse/credithouse.com.ua/calc/index.html#close" title="Close" class="modal-dialog-close">×</a>
+   <div class="call-back-form">
+      <center><h3>Оставьте заявку и мы свяжемся с Вами в ближайшее время</h3></center>
+      <form id="callback-form" method="post">
+         <input type="name" name="name" id="callback-form-name" placeholder="Ваше имя">
+         <input type="phone" name="phone" id="callback-form-phone" placeholder="Ваш телефон">
+         <center><button id="callback-form-send" class="button">Заказать</button></center>
+      </form>
+   </div>
+</div>
+</div>
+
+<script type="text/javascript" src="./index__files/owl.carousel.min.js"></script>
+<script type="text/javascript" src="./index__files/wp-embed.min.js"></script>
+<script type="text/javascript" src="./index__files/landingtextbody.js"></script>
+<script type="text/javascript" src="./index__files/calccredit.js"></script>
+</body>
+</html>
