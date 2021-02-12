@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Название документа</title>
+</head>
+<style>tr > td:nth-child(1) {background-color: #f00;}tr>td:nth-child(2) {background-color: #0006ff;}</style>
+<body>
+ 
+  <button onclick="foo()">Создать абзац</button>
+ 
+  <script>
+    function foo() {
+      var elem = document.createElement("tr");
+      elem.innerHTML = "<td>1 БЛОК 1.</td><td>2 БЛОК 2</td>";
+      document.body.appendChild(elem);
+    }
+  </script>
+ 
+</body>
+</html>

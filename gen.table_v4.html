@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Вывод попорядку документа</title>
+</head>
+<style> tr > td:nth-child(1) {background-color: #f00;}tr>td:nth-child(2) {background-color: #0006ff;}</style>
+<body>
+ 
+<ul id="ul"></ul>
+
+<script>
+function getListContent() {
+  let result = [];
+
+  for(let i=1; i<=32; i++) {
+    let li = document.createElement('li');
+    li.append(i);
+    result.push(li);
+  }
+
+  return result;
+}
+
+ul.append(...getListContent()); 
+</script>
+ <!-- ------------------------------------------------------- -->
+ 
+
+<form action="" id="add_persons" method="post" onsubmit="addRow();return false;">
+<fieldset>
+<legend>Добавить сотрудника</legend>
+    <ul>
+        <li>
+            <label for="name">Фамилия</label>
+            <input type="text" name="name" id="name" value="" size="12" tabindex="1" />
+        </li>
+        <li>
+            <label for="initials">Инициалы</label>
+            <input type="text" name="initials" id="initials" value="" size="12" tabindex="2" />
+        </li>
+        <li>
+            <label for="posada">Должность</label>
+            <input type="text" name="posada" id="posada" value="" size="12" tabindex="3" />
+        </li>
+        <li>
+            <label for="subm">Действия</label>
+            <input type="submit" name="subm" class="submit" value="Добавить" tabindex="4" />
+        </li>
+	</ul>
+</fieldset>
+</form></hr>
+
+
+<table id="tab1" class="sortable">
+    <thead>
+        <tr>
+            <th>ФИО</th>
+            <th>Должность</th>
+        </tr>
+    </thead>
+    <tbody>
+    </tbody>
+</table>
+
+
+
+  <script>
+var d = document;
+
+var name;
+var initials;
+var posada;
+
+function addRow()
+{
+    // Считываем значения с формы
+    name = d.getElementById('name').value;
+    initials = d.getElementById('initials').value;
+    posada = d.getElementById('posada').value;
+
+    // Находим нужную таблицу
+    var tbody = d.getElementById('tab1').getElementsByTagName('TBODY')[0];
+
+    // Создаем строку таблицы и добавляем ее
+    var row = d.createElement("TR");
+    tbody.appendChild(row);
+
+    // Создаем ячейки в вышесозданной строке
+    // и добавляем тх
+    var td1 = d.createElement("TD");
+    var td2 = d.createElement("TD");
+
+    row.appendChild(td1);
+    row.appendChild(td2);
+
+    // Наполняем ячейки
+    td1.innerHTML = name+' '+initials;
+    td2.innerHTML = posada;
+}
+    </script>
+
+</script>
+
+ 
+</body>
+</html>

@@ -1,0 +1,64 @@
+<body translate="no">
+
+  
+
+  <style>
+    tr {
+  border: 1px solid #000; padding: 15px;
+  background-color: #ff0;
+}
+td {
+  padding: 15px;
+  border: 1px solid #000;
+  border-radius: 4px;
+  color: #000;
+  background-color: #ccc;
+}
+</style>
+        <table class="ul">
+        <tbody>
+		<tr id="lr">
+            <td id="ll"></td>
+            <td id="lr"></td>
+        </tr>
+        </tbody></table>
+
+<script>
+function getListContent() {
+  var r = 100
+  var s = 0
+  var k = 10
+
+  let result = [];
+  // ========================================================================
+  for(let i=1; i<=k; i++) {
+        let ll = document.createElement('tr') ;
+        let lr = document.createElement('tr') ;
+    document.body.insertAdjacentHTML("afterbegin", `<div>+</div>`);
+   //let lr = document.createElement('td') ;
+ // let ul = document.createElement('td') ;
+        ul.append(k);       
+        lr.append(r);
+        //ul.append(g);
+
+    result.push(lr);
+    
+  }
+  // ========================================================================
+
+  return result;
+}
+
+lr.append(...getListContent()); 
+</script>
+
+  
+  
+  
+  
+
+
+
+
+ 
+</body>
